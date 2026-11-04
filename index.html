@@ -71,7 +71,8 @@ function $(i){return document.getElementById(i)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function ribu(t){var n=parseFloat(String(t).replace(",","."));return isNaN(n)?0:Math.round(n*1000)}
 function unribu(n){n=Number(n)||0;return n?String(n/1000).replace(".",","):""}
-function rp(n){n=Number(n)||0;return "Rp "+n.toLocaleString("id-ID")}
+function rp(n){function ribu(t){var n=parseFloat(String(t).replace(",","."));return isNaN(n)?0:Math.round(n*1000)}
+function unribu(n){n=Number(n)||0;return n?String(n/1000).replace(".",","):""}n=Number(n)||0;return "Rp "+n.toLocaleString("id-ID")}
 function tgl(d){var a=d.split("-");return a[2]+"-"+a[1]+"-"+a[0]}
 function hari(d){return HARI[new Date(d+"T12:00:00").getDay()]}
 function toast(m){var t=$("toast");t.textContent=m;t.className="on";setTimeout(function(){t.className=""},2200)}
